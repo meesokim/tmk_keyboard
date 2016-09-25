@@ -27,7 +27,7 @@ CONFIG_H = config.h
 #MCU = atmega32u4       # Teensy 2.0
 #MCU = at90usb646       # Teensy++ 1.0
 #MCU = at90usb1286      # Teensy++ 2.0
-MCU = atmega32u2       # Teensy 2.0
+MCU = atmega32u4       # Teensy 2.0
 
 
 # Processor frequency.
@@ -85,7 +85,7 @@ COMMAND_ENABLE = yes    # Commands for debug and configuration
 AVRDUDE = avrdude
 # Type: avrdude -c ? to get a full listing.
 AVRDUDE_PROGRAMMER = avr109
-AVRDUDE_PORT = /dev/ttyACM0
+AVRDUDE_PORT = //./COM11
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 
@@ -103,14 +103,13 @@ AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 # to submit bug reports.
 #AVRDUDE_VERBOSE = -v -v
 
-AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
+AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) -C /etc/avrdude.conf
 #AVRDUDE_FLAGS = -p $(MCU) -c $(AVRDUDE_PROGRAMMER)
 AVRDUDE_FLAGS += $(AVRDUDE_NO_VERIFY)
 AVRDUDE_FLAGS += $(AVRDUDE_VERBOSE)
 AVRDUDE_FLAGS += $(AVRDUDE_ERASE_COUNTER)
 
-PROGRAM_CMD = $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
-
+PROGRAM_CMD = $(AVRDUDE_PORT); $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
 
 # Search Path
 VPATH += $(TARGET_DIR)
