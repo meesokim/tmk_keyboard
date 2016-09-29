@@ -110,11 +110,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
     /* ANSI */
     KEYMAP(
-    FN0, F17,     F1,  F2,  F3,  F4,  F5,   F6,  F7,  F8,  F9,  F10,              PSCR,SLCK,PAUS,     CAPS,F11, F12, F13,
+    BRK, PSCR,    F1,  F2,  F3,  F4,  F5,   F6,  F7,  F8,  F9,  F10,              PSCR,SLCK,NLCK,     CAPS,F11, F12, F13,
     ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,BSPC,   HOME,INS, DEL,      NLCK,PSLS,PAST,PMNS,
-    TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,     ENT,    PGDN,PGUP,END,      P7,  P8,  P9,  PPLS,
-    LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,F18,                   UP,            P4,  P5,  P6,  PEQL,
-    LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,GRV,                   LEFT,DOWN,RGHT,     P1,  P2,  P3,  PENT,
+    TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   GRV,LBRC,     ENT,    PGUP,PGDN,END,      P7,  P8,  P9,  PPLS,
+    LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,RBRC,                   UP,            P4,  P5,  P6,  PEQL,
+    LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,MINS,                   LEFT,DOWN,RGHT,     P1,  P2,  P3,  PENT,
          F19, LGUI,LALT,     SPC,      RALT,RGUI,RCTL,APP,                        F14,      F15,      P0,  PCMM,PDOT
     ),
     /* JIS */

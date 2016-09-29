@@ -85,9 +85,9 @@ COMMAND_ENABLE = yes    # Commands for debug and configuration
 AVRDUDE = avrdude
 # Type: avrdude -c ? to get a full listing.
 AVRDUDE_PROGRAMMER = avr109
-AVRDUDE_PORT = //./COM11
+AVRDUDE_PORT = //./COM12
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
-#AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
+AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 
 # Uncomment the following if you want avrdude's erase cycle counter.
 # Note that this counter needs to be initialized first using -Yn,
@@ -109,7 +109,7 @@ AVRDUDE_FLAGS += $(AVRDUDE_NO_VERIFY)
 AVRDUDE_FLAGS += $(AVRDUDE_VERBOSE)
 AVRDUDE_FLAGS += $(AVRDUDE_ERASE_COUNTER)
 
-PROGRAM_CMD = $(AVRDUDE_PORT); $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
+PROGRAM_CMD = $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
 
 # Search Path
 VPATH += $(TARGET_DIR)
