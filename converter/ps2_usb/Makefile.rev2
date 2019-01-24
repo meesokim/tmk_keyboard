@@ -1,5 +1,5 @@
 TARGET ?= ps2_usb_rev2
-MCU = atmega32u2
+MCU = atmega32u4
 CONFIG_H = config_rev2.h
 BOOTLOADER_SIZE = 4096
 

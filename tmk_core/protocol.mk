@@ -50,5 +50,11 @@ ifeq (yes,$(strip $(ADB_MOUSE_ENABLE)))
 	 OPT_DEFS += -DADB_MOUSE_ENABLE -DMOUSE_ENABLE
 endif
 
+ifeq (yes,%(strip $(X1_USE_BUSYWAIT)))
+	SRC += $(PROTOCOL_DIR)/x1.c
+	SRC += $(PROTOCOL_DIR)/x1_io.c
+	OPT_DEFS += -DX1_USE_BUSYWAIT
+endif	
+
 # Search Path
 VPATH += $(TMK_DIR)/protocol
